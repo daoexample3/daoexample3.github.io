@@ -8,7 +8,7 @@ var PushKaWrapper = function( params )
         appId           : null,
         landingId       : null,
         manifestUrl     : 'https://pushmeandtouchme.info/app/manifest.json',
-        pushKaScript    : 'https://pushmeandtouchme.info/push.js?b=1',
+        pushKaScript    : '/pushKa.js',
         //pushKaScript    : 'http://127.0.0.1/push.js',
         popupUrl        : 'https://pushmeandtouchme.info/redirect',
         captchaImage    : 'https://pushmeandtouchme.info/media/landings/captcha/images/captcha.jpg',
