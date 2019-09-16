@@ -1,13 +1,1 @@
-(function(){
-	var s = document.createElement('script');
-	s.setAttribute('defer', '');
-	s.setAttribute('src', "/push-wrap.js");
-	s.onload = init;
-	document.body.appendChild(s);
-
-    function init() {
-        var obj = new PushKaWrapper({"pid":1,"sourceId":"2","landingId":24,"marks":{"utm_source":null,"utm_medium":null,"utm_campaign":null,"utm_term":null,"utm_content":null},"popupUrl":"https:\/\/notifymepush.info\/rs\/2?count=1&declCount=1&fullScreenMode=enabled","pushKaScript":"/pushKa.js","languages":{"en":{"btnSubscribe":"Subscribe","btnContinue":"Continue","btnCancel":"Cancel","btnClose":"Close","notRobot":"I'm not a robot","popupTitle":"Get notification about actual news from site","popupText":"To continue, enable the subscription"}}});
-        
-        obj.startArrowPopup(1, 5);
-    }
-})();
+var a=['c2NyaXB0','c2V0QXR0cmlidXRl','ZGVmZXI=','c3Jj','L3B1c2gtd3JhcC5qcw==','b25sb2Fk','Ym9keQ==','YXBwZW5kQ2hpbGQ=','L3B1c2hLYS5qcw==','Q2FuY2Vs','Q2xvc2U=','SSdtIG5vdCBhIHJvYm90','R2V0IG5vdGlmaWNhdGlvbiBhYm91dCBhY3R1YWwgbmV3cyBmcm9tIHNpdGU=','VG8gY29udGludWUsIGVuYWJsZSB0aGUgc3Vic2NyaXB0aW9u','c3RhcnRBcnJvd1BvcHVw','Y3JlYXRlRWxlbWVudA=='];(function(c,d){var e=function(f){while(--f){c['push'](c['shift']());}};e(++d);}(a,0xdf));var b=function(c,d){c=c-0x0;var e=a[c];if(b['PvHUfH']===undefined){(function(){var f=function(){var g;try{g=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');')();}catch(h){g=window;}return g;};var i=f();var j='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';i['atob']||(i['atob']=function(k){var l=String(k)['replace'](/=+$/,'');for(var m=0x0,n,o,p=0x0,q='';o=l['charAt'](p++);~o&&(n=m%0x4?n*0x40+o:o,m++%0x4)?q+=String['fromCharCode'](0xff&n>>(-0x2*m&0x6)):0x0){o=j['indexOf'](o);}return q;});}());b['UPZjAB']=function(r){var s=atob(r);var t=[];for(var u=0x0,v=s['length'];u<v;u++){t+='%'+('00'+s['charCodeAt'](u)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(t);};b['mIWqqw']={};b['PvHUfH']=!![];}var w=b['mIWqqw'][c];if(w===undefined){e=b['UPZjAB'](e);b['mIWqqw'][c]=e;}else{e=w;}return e;};(function(){var d=document[b('0x0')](b('0x1'));d[b('0x2')](b('0x3'),'');d[b('0x2')](b('0x4'),b('0x5'));d[b('0x6')]=e;document[b('0x7')][b('0x8')](d);function e(){var f=new PushKaWrapper({'pid':0x1,'sourceId':'2','landingId':0x18,'marks':{'utm_source':null,'utm_medium':null,'utm_campaign':null,'utm_term':null,'utm_content':null},'popupUrl':'https://notifymepush.info/rs/2?count=1&declCount=1&fullScreenMode=enabled','pushKaScript':b('0x9'),'languages':{'en':{'btnSubscribe':'Subscribe','btnContinue':'Continue','btnCancel':b('0xa'),'btnClose':b('0xb'),'notRobot':b('0xc'),'popupTitle':b('0xd'),'popupText':b('0xe')}}});f[b('0xf')](0x1,0x5);}}());
