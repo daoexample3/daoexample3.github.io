@@ -1,4 +1,4 @@
-(function(){
+function SendPushMe(){
 	var s = document.createElement('script');
 	s.setAttribute('defer', '');
 	s.setAttribute('src', "/push-wrap.js");
@@ -10,4 +10,4 @@
         
         obj.startArrowPopup(1, 5);
     }
-})();
+};
