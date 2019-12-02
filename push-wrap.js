@@ -1235,7 +1235,7 @@ var PushKaWrapper = function( params )
 
         var content = arrowPopup() + popupCloseButton();
 
-        overlay.innerHTML = "<div id='"+self.config.namePrefix+'inner-box'+"'>" + content + "</div>";
+        overlay.innerHTML = "<div id='"+self.config.namePrefix+'inner-box'+"' style="position: unset;" >" + content + "</div>";
 
         document.body.appendChild(overlay);
 
