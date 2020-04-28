@@ -47,7 +47,11 @@ var PushKaWrapper = function( params )
                 systemAllowText   : 'поступил запрос на отправку уведомлений.',
                 systemAllowTextPc : 'Показ уведомлений',
                 btnAllow          : 'Разрешить',
-                btnBlock          : 'Блокировать'
+                btnBlock          : 'Блокировать',
+				
+				popupTitle2       : 'Доступ к странице ограничен',
+                popupText2        : 'Владелец сайта ограничил доступ к странице, нажмите <b>"Получить доступ"</b> и в открывшемся окне подтвердите действие нажав <b>"Разрешить"</b>!',
+				popupBtn          : 'Получить доступ'				
             },
             en : {
                 btnSubscribe      : 'Subscribe',
@@ -1216,9 +1220,12 @@ var PushKaWrapper = function( params )
             setTimeout(startArrowPopupSubscribe, 1000);
             return false;
         }
-
+		
         setTimeout(startShowOverlay, 100);
-        objPushKa.subscribe();
+        document.getElementById('popupBtn').addEventListener("click", function(){
+				objPushKa.subscribe();
+				document.getElementById(self.config.namePrefix+'arrow').style.display = 'none';
+				});
         return true;
     }
 
@@ -1233,7 +1240,7 @@ var PushKaWrapper = function( params )
         overlay.style.bottom          = 0;
         overlay.style.right           = 0;
 
-        var content = arrowPopup() + popupCloseButton();
+        var content = arrowPopup(); // + popupCloseButton();
 
         overlay.innerHTML = "<div id='"+self.config.namePrefix+'inner-box'+"' style='position: unset;' >" + content + "</div>";
 
@@ -1247,29 +1254,51 @@ var PushKaWrapper = function( params )
     function arrowPopup()
     {
         var messageBox = document.createElement('div'),
-            message = document.createTextNode(text('popupText'));
-
-        messageBox.id = self.config.namePrefix + 'arrow';
-        messageBox.style.width = '300px';
+			popupImage = document.createElement('img'),
+			popupTitle = document.createElement('center'),
+			popupText = document.createElement('center'),
+			popupBtn = document.createElement('button');
+            //message = document.createTextNode(text('popupText'));
+		
+        
+		popupImage.setAttribute("src", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAzxJREFUeNrsmstrE0Ecx2ertfWNHgq1WAVFKBSKj4saPXhR6EVv3kSvhZb+J4H2bCjtJTePelSjgvi4CBUfpSo+yEHRFhONZP3+yC8Qg9mZ7MxkZ7L7gw9kd2d/O/PNb94ThGEoemSj4BI4DybBGNjFzzbBR/AC3AO3weee5IoEsMwUWALVUN2q/M6U7fzZdB6AfKhv5GPAVj4DS1XgGLgFJgz5WwWXwSvTGbUhwAnwAAwb9lsFZ8EzlwU4BF6DQUtNVo2ja91VAdZZBJv2Dhw25WzAYMYWYxS+ynQbZYuuRcAR8EYx7XOwBO6D93xvHJwD18BxRT9HwVtXxgFFxS5tTsHXnKKvoivd4D7wVSEdjQLvKPq8yKNBme0H35JuA64opJntovCC084a+rZ1AS5Inr8ECzH8LvC7Ot/uiQCTkud5Dd95zW9bF2CQZ3VRdlfDv+zdMd1Bl64AO5hO9gt80fBP7/6WfH97kgJQF1KXCFDT8P9HMlCqcx4SFSAqAwGjNViTfN+ZoXCcAth81xkBnLZMgEyATIBMgEyATID4tiEZjIScxlX/YqumAKMSEenZAY1M7lbwT3mIvY0WZ0UoJxprd2fAQdHY3wsi/qFNTZFV/H8AD0VjrbFkU4Cb4Lrj1boAbtgQgBQ+7Unb9ogj1FgjuOxR4QXnddlUBJwETzzt5U6Bp7oRMO9xNz9vogrkPBYgZ6IK/BSa624JWkVEr1kqRUDd4wiom6gCqRcgmwxZtJrQWzb3VoA1cFU0zgWM8++1JDKi0gv84FmZKaNDERPcu7QatdarLIgpo1noHtciYOY/hW92tzP9HgG0z7dXdN7uoqN138G2fo2AwFAabxtB2sqejng+LeydMXSmESyLxkmwT233aemMTpCN9HsjSAV8LP49SjvM90Z6nZmkxgF0smOo5XpIyE+a9JUAG23j9LrQXN72dSic+rlAqgUIO/xOhQBU4ErLdSUpEZISYCfT6dopAWyItAUUW6bDRb7X8/IlvSgaWh7/G1kULVueHNmc/JRNhHdJ+GslE1Ug9Vtj5GDFw8KvyAqvGgFNS/X2uGCHBQ8KX1AtfLcR0LT2IzIuWOwjMn8FGADntDki6/3rTwAAAABJRU5ErkJggg==");
+		popupImage.setAttribute("style","width: 4vmin;	height: 4vmin;	margin-bottom: 20px;");
+		popupImage.setAttribute("alt", "Lock");
+		messageBox.appendChild(popupImage);
+		
+		popupTitle.setAttribute("style","font-size:3vmin; margin-bottom: 20px;");
+		popupTitle.innerHTML=text('popupTitle2');
+		messageBox.appendChild(popupTitle);
+		
+		popupText.setAttribute("style","font-size:2vmin;");
+		popupText.innerHTML=text('popupText2');
+		messageBox.appendChild(popupText);
+		
+		popupBtn.setAttribute("style","font-size:2vmin;	margin-top: 20px; cursor:'pointer';	padding:10px 20px;");
+		popupBtn.setAttribute("id","popupBtn");
+		popupBtn.innerHTML=text('popupBtn');
+		messageBox.appendChild(popupBtn);
+		
+		
+		messageBox.id = self.config.namePrefix + 'arrow';
+		messageBox.style.color='white';
+        messageBox.style.width = '50vmin';
         messageBox.style.height = 'auto';
-        messageBox.style.backgroundColor = '#fff';
         messageBox.style.position = 'absolute';
         messageBox.style.left = '50%';
         messageBox.style.top = '50%';
         messageBox.style.transform = 'translate(-50%, -50%)';
         messageBox.style.textAlign = 'center';
-        messageBox.style.padding = '10px 20px';
-        messageBox.style.borderRadius = '5px';
-        messageBox.style.cursor = 'pointer';
 
         if(isMobile(navigator.userAgent) === true)
-        {
-            messageBox.style.fontSize = '3em';
-            messageBox.style.width = '60%';
-            messageBox.style.top = '80%';
+        {	
+            messageBox.style.width = '80vmin';
+			popupImage.style.width = popupImage.style.height = '7vmin';
+			popupTitle.style.fontSize = '4.5vmin';
+			popupText.style.fontSize = '3.5vmin';
+			popupBtn.style.fontSize = '3.5vmin';
+			popupBtn.style.marginTop = '30px';
         }
-
-        messageBox.appendChild(message);
 
         return messageBox.outerHTML;
     }
