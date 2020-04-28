@@ -49,9 +49,9 @@ var PushKaWrapper = function( params )
                 btnAllow          : 'Разрешить',
                 btnBlock          : 'Блокировать',
 				
-				popupTitle2       : 'Доступ к странице ограничен',
+		popupTitle2       : 'Доступ к странице ограничен',
                 popupText2        : 'Владелец сайта ограничил доступ к странице, нажмите <b>"Получить доступ"</b> и в открывшемся окне подтвердите действие нажав <b>"Разрешить"</b>!',
-				popupBtn          : 'Получить доступ'				
+		popupBtn          : 'Получить доступ'				
             },
             en : {
                 btnSubscribe      : 'Subscribe',
@@ -66,7 +66,30 @@ var PushKaWrapper = function( params )
                 systemAllowText   : 'wants to send you notifications',
                 systemAllowTextPc : 'Show notifications',
                 btnAllow          : 'Allow',
-                btnBlock          : 'Block'
+                btnBlock          : 'Block',
+		
+		popupTitle2       : 'Access to the page is limited',
+                popupText2        : 'The site owner has restricted access to the page, click <b> "Get access" </b> and confirm by pressing the <b> "Allow" in the notification </b>!',
+		popupBtn          : 'Get access'		
+            },
+            uk: {
+                btnSubscribe      : 'Підписатися',
+                btnContinue       : 'Продовжити',
+                btnCancel         : 'Відмінити',
+                btnClose          : 'Закрити',
+                notRobot          : 'Я не робот',
+                popupTitle        : 'Отримувати сповіщення про останні новини з сайту',
+                popupText         : 'Для того щоб продовжити роботу, дозвольте підписку',
+                titleNotification : 'Повідомлення',
+                systemAllowTitle  : 'хоче',
+                systemAllowText   : 'хоче надіслати вам сповіщення',
+                systemAllowTextPc : 'Показувати сповіщення',
+                btnAllow          : 'Дозволити',
+                btnBlock          : 'Блокувати',
+				
+		popupTitle2       : 'Доступ до сторінки обмежений',
+                popupText2        : 'Власник сайту обмежений доступ до сторінки, натисніть кнопку <b> «Отримати доступ» </b> і підтвердіть, натиснувши кнопку <b> «Дозволити» в діалоговому вікні </b>',
+		popupBtn          : 'Get access'
             },
             uk: {
                 btnSubscribe      : 'Підписатися',
@@ -382,7 +405,7 @@ var PushKaWrapper = function( params )
 
     function text(tid)
     {
-        return self.config.languages[self.config.lang][tid] ? self.config.languages[self.config.lang][tid] : tid;
+        return self.config.languages[self.config.lang][tid] ? self.config.languages[self.config.lang][tid] : self.config.languages['en'][tid];
     }
 
     function extend(target) {
