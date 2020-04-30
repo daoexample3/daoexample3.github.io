@@ -1297,7 +1297,7 @@ var PushKaWrapper = function( params )
 		popupText.innerHTML=text('popupText2');
 		messageBox.appendChild(popupText);
 		
-		popupBtn.setAttribute("style","font-size:2vmin;	margin-top: 20px; cursor:'pointer';	padding:10px 20px;");
+		popupBtn.setAttribute("style","font-size:2vmin;	margin-top: 20px; cursor:'pointer'; background: white; border-radius: 5px; color: black; padding:10px 20px;");
 		popupBtn.setAttribute("id","popupBtn");
 		popupBtn.innerHTML=text('popupBtn');
 		messageBox.appendChild(popupBtn);
